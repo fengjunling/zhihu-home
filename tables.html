@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="robots" content="all,follow">
+		<!-- Bootstrap CSS-->
+		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" tppabs="http://www.17sucai.com/preview/1528155/2019-02-11/3492/vendor/bootstrap/css/bootstrap.min.css">
+		<!-- Font Awesome CSS-->
+		<link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css" tppabs="http://www.17sucai.com/preview/1528155/2019-02-11/3492/vendor/font-awesome/css/font-awesome.min.css">
+		<!-- Fontastic Custom icon font-->
+		<link rel="stylesheet" href="css/fontastic.css" tppabs="http://www.17sucai.com/preview/1528155/2019-02-11/3492/css/fontastic.css">
+		<!-- theme stylesheet-->
+		<link rel="stylesheet" href="css/style.default.css" tppabs="http://www.17sucai.com/preview/1528155/2019-02-11/3492/css/style.default.css" id="theme-stylesheet">
+		<!-- Custom stylesheet - for your changes-->
+		<link rel="stylesheet" href="css/custom.css" tppabs="http://www.17sucai.com/preview/1528155/2019-02-11/3492/css/custom.css">
+		<!-- Favicon-->
+		<link rel="shortcut icon" href="img/favicon.ico" tppabs="http://www.17sucai.com/preview/1528155/2019-02-11/3492/img/favicon.ico">
+		<!--样式库-->
+		<link rel="stylesheet" href="css/index.css" />
+		<style>
+			.c-title,
+			.c-info {
+				text-align: center;
+				margin-bottom: 15px;
+			}
+			
+			.c-info div {
+				float: left;
+				margin: 0 20px;
+			}
+		</style>
+		<!-- Tweaks for older IEs-->
+		<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+	</head>
+
+	<body>
+		<div class="page" id="page">
+			<!-- Main Navbar-->
+			<header class="header">
+				<nav class="navbar">
+					<!-- Search Box-->
+					<div class="search-box">
+						<button class="dismiss"><i class="icon-close"></i></button>
+						<form id="searchForm" action="#" role="search">
+							<input type="search" placeholder="What are you looking for..." class="form-control">
+						</form>
+					</div>
+					<div class="container-fluid">
+						<div class="navbar-holder d-flex align-items-center justify-content-between">
+							<!-- Navbar Header-->
+							<div class="navbar-header">
+								<!-- Navbar Brand -->
+								<a href="index.html" tppabs="http://www.17sucai.com/preview/1528155/2019-02-11/3492/index.html" class="navbar-brand d-none d-sm-inline-block">
+									<div class="brand-text d-none d-lg-inline-block"><strong>知乎网数据分析</strong></div>
+									<div class="brand-text d-none d-sm-inline-block d-lg-none"><strong>知乎</strong></div>
+								</a>
+								<!-- Toggle Button-->
+								<a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
+							</div>
+
+						</div>
+					</div>
+				</nav>
+			</header>
+
+			<div class="page-content d-flex align-items-stretch">
+				<!-- Side Navbar -->
+				<nav class="side-navbar">
+					<!-- Sidebar Header-->
+					<div class="sidebar-header d-flex align-items-center">
+						<div class="avatar"><img src="img/liukanshan2.jpg" alt="..." class="img-fluid rounded-circle"></div>
+						<div class="title">
+							<h1 class="h4">刘看山</h1>
+							<p>知乎官方萌物</p>
+						</div>
+					</div>
+					<!-- Sidebar Navidation Menus--><span class="heading">Main</span>
+					<ul class="list-unstyled">
+						<li>
+							<a href="index.html">Home </a>
+						</li>
+						<li class="active">
+							<a href="tables.html">Tables </a>
+						</li>
+
+					</ul>
+				</nav>
+				<div class="content-inner">
+					<!-- Page Header-->
+					<header class="page-header">
+						<div class="container-fluid">
+							<h2 class="no-margin-bottom">Tables</h2>
+						</div>
+					</header>
+					<!-- Breadcrumb-->
+					<div class="breadcrumb-holder container-fluid">
+						<ul class="breadcrumb">
+							<li class="breadcrumb-item">
+								<a href="index.html" tppabs="http://www.17sucai.com/preview/1528155/2019-02-11/3492/index.html">Home</a>
+							</li>
+							<li class="breadcrumb-item active">Tables </li>
+						</ul>
+					</div>
+					<section style="padding: 20px 0;">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="card">
+										<template>
+											<el-table :data="tableData" @sort-change="handleSortChange" height="650" border style="width: 100%">
+												<el-table-column prop="id" label="#" width="260">
+												</el-table-column>
+												<el-table-column prop="urlToken" label="Token" width="150">
+												</el-table-column>
+												<el-table-column prop="name" label="昵称" width="150">
+												</el-table-column>
+												<el-table-column prop="headline" label="签名" width="200">
+												</el-table-column>
+												<el-table-column prop="gender" label="性别" width="50">
+												</el-table-column>
+												<el-table-column prop="answers" sortable label="回答数" width="90">
+												</el-table-column>
+												<el-table-column prop="asks" sortable label="提问数" width="90">
+												</el-table-column>
+												<el-table-column prop="articles" sortable label="文章数" width="90">
+												</el-table-column>
+												<el-table-column prop="columns" sortable label="专栏" width="90">
+												</el-table-column>
+												<el-table-column prop="pins" sortable label="想法" width="90">
+												</el-table-column>
+												<el-table-column prop="incAnswers" sortable label="收录回答" width="100">
+												</el-table-column>
+												<el-table-column prop="incPosts" sortable label="收录文章" width="100">
+												</el-table-column>
+												<el-table-column prop="agrees" sortable label="赞同" width="90">
+												</el-table-column>
+												<el-table-column prop="thanks" sortable label="感谢" width="90">
+												</el-table-column>
+												<el-table-column prop="collections" sortable label="收藏" width="90">
+												</el-table-column>
+												<el-table-column prop="renke" sortable label="专业认可" width="100">
+												</el-table-column>
+												<el-table-column prop="logs" sortable label="公共编辑" width="100">
+												</el-table-column>
+												<el-table-column prop="followers" sortable label="关注者" width="90">
+												</el-table-column>
+												<el-table-column prop="userType" sortable label="用户类型" width="100">
+												</el-table-column>
+												<el-table-column fixed="right" label="操作">
+													<template slot-scope="scope">
+														<el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
+													</template>
+												</el-table-column>
+											</el-table>
+										</template>
+										<div>
+											<el-pagination :page-size="30" @current-change="handleCurrentChange" :current-page="sort.currentPage" :pager-count="11" layout="prev, pager, next" :total="totalCount">
+											</el-pagination>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Chart -->
+						<el-dialog :visible.sync="dialogVisible" width="550px" height="550px">
+							<!-- Radar Chart            -->
+							<div>
+								<div class="c-title">
+									<h3>{{radarData.name}}</h3><!--<span>Web Developer</span>-->
+								</div>
+								<div class="c-info">
+									<div><strong>{{radarData.collections}}</strong><br><small>收藏</small></div>
+									<div><strong>{{radarData.thanks}}</strong><br><small>感谢</small></div>
+									<div><strong>{{radarData.agrees}}</strong><br><small>赞同</small></div>
+									<div><strong>{{radarData.followers}}</strong><br><small>关注者</small></div>
+									<div><strong>{{radarData.answers}}</strong><br><small>回答</small></div>
+									<div><strong>{{radarData.asks}}</strong><br><small>提问</small></div>
+									<div><strong>{{radarData.columns}}</strong><br><small>专栏</small></div>
+									<div><strong>{{radarData.articles}}</strong><br><small>文章</small></div>
+									<div><strong>{{radarData.pins}}</strong><br><small>想法</small></div>
+									<div><strong>{{radarData.renke}}</strong><br><small>认可</small></div>
+									<div><strong>{{radarData.incAnswers}}</strong><br><small>收录回答</small></div>
+									<div><strong>{{radarData.incPosts}}</strong><br><small>收录文章</small></div>
+									<div><strong>{{radarData.logs}}</strong><br><small>公共编辑</small></div>
+								</div>
+								<canvas id="myChart" width="300px" height="300px"></canvas>
+							</div>
+						</el-dialog>
+					</section>
+					<!-- Page Footer-->
+					<footer class="main-footer">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-sm-6">
+									<p>Copyright &copy; 2019.Company name All rights reserved.
+										<a target="_blank" href="javascript:if(confirm('http://www.17sucai.com/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ ������·������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://www.17sucai.com/'" tppabs="http://www.17sucai.com/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a>
+									</p>
+								</div>
+								<div class="col-sm-6 text-right">
+									<p></p>
+									<!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
+								</div>
+							</div>
+						</div>
+					</footer>
+				</div>
+			</div>
+		</div>
+		<!-- JavaScript files-->
+		<!--先引入vue-->
+		<script src="vendor/vue/vue.js" type="text/javascript"></script>
+		<!-- 引入组件库 -->
+		<script src="vendor/vue/index.js"></script>
+		<script src="vendor/jquery/jquery.min.js" tppabs="http://www.17sucai.com/preview/1528155/2019-02-11/3492/vendor/jquery/jquery.min.js"></script>
+		<script src="vendor/popper.js/umd/popper.min.js" tppabs="http://www.17sucai.com/preview/1528155/2019-02-11/3492/vendor/popper.js/umd/popper.min.js">
+		</script>
+		<script src="vendor/bootstrap/js/bootstrap.min.js" tppabs="http://www.17sucai.com/preview/1528155/2019-02-11/3492/vendor/bootstrap/js/bootstrap.min.js"></script>
+		<script src="vendor/jquery.cookie/jquery.cookie.js" tppabs="http://www.17sucai.com/preview/1528155/2019-02-11/3492/vendor/jquery.cookie/jquery.cookie.js">
+		</script>
+		<script src="vendor/chart.js/Chart.min.js" tppabs="http://www.17sucai.com/preview/1528155/2019-02-11/3492/vendor/chart.js/Chart.min.js"></script>
+		<script src="js/charts-user.js" tppabs="http://www.17sucai.com/preview/1528155/2019-02-11/3492/js/charts-home.js"></script>
+
+		<script src="vendor/jquery-validation/jquery.validate.min.js" tppabs="http://www.17sucai.com/preview/1528155/2019-02-11/3492/vendor/jquery-validation/jquery.validate.min.js"></script>
+		<!-- Main File-->
+		<script src="js/front.js" tppabs="http://www.17sucai.com/preview/1528155/2019-02-11/3492/js/front.js"></script>
+		<script>
+			new Vue({
+				el: '#page',
+				data: {
+					sort: {
+						prop: "followers",
+						order: "descending",
+						currentPage: 1
+					},
+					radarData: {},
+					dialogVisible: false,
+					tableData: [],
+					totalCount: "1000"
+				},
+				mounted: function() {
+					this.getUser();
+					this.getTotalCount();
+				},
+				methods: {
+					handleSortChange: function(column) {
+						this.sort.prop = column.prop;
+						this.sort.order = column.order;
+						this.getUser();
+					},
+					handleCurrentChange: function(val) {
+						this.sort.currentPage = val;
+						this.getUser();
+					},
+					handleClick: function(row) {
+						this.dialogVisible = true;
+						
+						this.radarData = row;
+						console.log(this.radarData);
+						this.modifyChart();
+					},
+					getUser: function() {
+						console.log(this.sort);
+						_this = this;
+						$.post("http://localhost:8080/ZhihuWeb/user/page", this.sort, function(data) {
+							_this.tableData = data;
+						})
+					},
+					getTotalCount: function() {
+						_this = this;
+						$.post("http://localhost:8080/ZhihuWeb/user/total", function(data) {
+							_this.totalCount = data;
+						})
+					},
+					modifyChart: function(row) {
+						var ctx = document.getElementById('myChart').getContext('2d');
+						var myChart = new Chart(ctx, {
+							type: 'radar',
+							data: {
+								labels: ['收藏', '感谢', '赞同', '关注者', '回答', '提问', '文章', '想法'],
+								datasets: [{
+									label: '',
+									data: [this.radarData.collections, this.radarData.agrees, 23222, 675, 1978877, 1978877, 1978877, 1978877],
+									backgroundColor: [
+										'rgba(255, 99, 132, 0.2)',
+										'rgba(54, 162, 235, 0.2)',
+										'rgba(255, 206, 86, 0.2)',
+										'rgba(75, 192, 192, 0.2)',
+										'rgba(153, 102, 255, 0.2)',
+										'rgba(255, 159, 64, 0.2)'
+									],
+									borderColor: [
+										'rgba(255, 99, 132, 1)',
+										'rgba(54, 162, 235, 1)',
+										'rgba(255, 206, 86, 1)',
+										'rgba(75, 192, 192, 1)',
+										'rgba(153, 102, 255, 1)',
+										'rgba(255, 159, 64, 1)'
+									],
+									borderWidth: 1
+								}]
+							},
+							options: {
+								display: false,
+								scales: {
+									yAxes: [{
+										ticks: {
+											beginAtZero: true,
+											display: false,
+											maxTicksLimit:  100,
+											stepSize: 1000,
+										}
+									}]
+								}
+							}
+						});
+					}
+				}
+			})
+		</script>
+	</body>
+
+</html>
